@@ -1,7 +1,4 @@
-import sort.BubbleSort;
-import sort.InsertSort;
-import sort.SelectSort;
-import sort.Sort;
+import sort.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,12 +7,17 @@ import java.util.Random;
 
 public class SortTest {
 
-    static List<Sort> sorts = Arrays.asList(new InsertSort(), new SelectSort(), new BubbleSort());
+    static List<Sort> sorts = Arrays.asList(
+            new InsertSort(),
+            new SelectSort(),
+            new BubbleSort(),
+            new MergeSort()
+    );
 
     public static void main(String[] args) {
 
 
-        List<Integer> array = randomArray(20);
+        List<Integer> array = randomArray(10);
 
         sorts.forEach(e -> System.out.println(e.sort(array)));
     }

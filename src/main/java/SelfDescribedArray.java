@@ -62,7 +62,8 @@ public class SelfDescribedArray {
 
     private static String bits(long n, long m) {
         String text = Long.toBinaryString(n);
-        return text.length() < m ? "0".repeat((int) m - text.length()) + text : text;
+//        return text.length() < m ? "0".repeat((int) m - text.length()) + text : text;
+        return null;
     }
 
     private static List<Integer> finalResult(List<Integer> subset, int n) {
