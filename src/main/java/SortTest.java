@@ -17,9 +17,14 @@ public class SortTest {
     public static void main(String[] args) {
 
 
-        List<Integer> array = randomArray(10);
+        List<Integer> array = randomArray(10000);
 
-        sorts.forEach(e -> System.out.println(e.sort(array)));
+        sorts.forEach(e -> {
+                    long s = System.currentTimeMillis();
+                    List<Integer> r = e.sort(array);
+                    System.out.println(r + " in " + (System.currentTimeMillis() - s) + " ms");
+                }
+        );
     }
 
     public static List<Integer> randomArray(int size) {
@@ -30,7 +35,7 @@ public class SortTest {
         List<Integer> array = new ArrayList<>();
 
         for (int i = 0; i < size; i++) {
-            array.add(r.nextInt(100));
+            array.add(r.nextInt(1000));
         }
 
         return array;

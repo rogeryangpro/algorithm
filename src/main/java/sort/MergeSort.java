@@ -1,29 +1,32 @@
 package sort;
 
-import sort.util.ListUtil;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class MergeSort implements Sort {
+    public static void main(String[] args) {
+
+        System.out.println(new MergeSort().sort(null));
+    }
 
     @Override
     public List<Integer> sort(List<Integer> array) {
+//        array = Arrays.asList(3,1,3,2,5,4);
         mergeSort(array, 0, array.size() - 1);
         return array;
     }
 
     private void mergeSort(List<Integer> array, int start, int end) {
 
-        System.out.println(start + " -- " + end);
         if (start < end) {
-            if (start == end - 1) {
-                if (array.get(start) > array.get(end)) {
-                    ListUtil.switchElement(array, start, end);
-                }
-                return;
-            }
+//            if (start == end - 1) {
+//                if (array.get(start) > array.get(end)) {
+//                    ListUtil.switchElement(array, start, end);
+//                }
+//                return;
+//            }
 
 
             int mid = (start + end) / 2;
@@ -44,10 +47,11 @@ public class MergeSort implements Sort {
         int i = 0;
         int j = 0;
 
+
         List<Integer> left = new ArrayList<>(array.subList(start, middle));
         List<Integer> right = new ArrayList<>(array.subList(middle, end + 1));
 
-        int index = 0;
+        int index = start;
         while (i < left.size() && j < right.size()) {
             if (left.get(i) <= right.get(j)) {
                 array.set(index, left.get(i));
@@ -71,6 +75,7 @@ public class MergeSort implements Sort {
             index++;
             j++;
         }
+
     }
 
 
