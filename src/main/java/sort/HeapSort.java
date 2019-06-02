@@ -2,43 +2,45 @@ package sort;
 
 import sort.util.ListUtil;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class HeapSort implements Sort {
     @Override
     public List<Integer> sort(List<Integer> array) {
-        return null;
+        heapSort(array);
+
+        return array;
     }
 
 
-    private static void maxHeapify(List<Integer> array, int i) {
+    private static void maxHeapify(Heap heap, int i) {
 
         int largest = i;
 
+        List<Integer> array = heap.array;
+
         int left = left(i);
 
-        if (left < array.size() && array.get(i) < array.get(left)) {
+        if (left < heap.size && array.get(i) < array.get(left)) {
             largest = left;
         }
 
         int right = right(i);
 
-        if (right < array.size() && array.get(i) < array.get(right)) {
+        if (right < heap.size && array.get(largest) < array.get(right)) {
             largest = right;
         }
 
         if (largest != i) {
             ListUtil.switchElement(array, i, largest);
-            maxHeapify(array, largest);
+            maxHeapify(heap, largest);
         }
 
     }
 
-    private static void buildMaxHeap(List<Integer> array) {
-        for (int i = array.size() / 2; i >= 0; i--) {
-            maxHeapify(array, i);
+    private static void buildMaxHeap(Heap heap) {
+        for (int i = heap.array.size() / 2 - 1; i >= 0; i--) {
+            maxHeapify(heap, i);
         }
     }
 
@@ -54,15 +56,14 @@ public class HeapSort implements Sort {
         return i % 2 == 0 ? i / 2 - 1 : i / 2;
     }
 
-    public static void main(String[] args) {
+    private void heapSort(List<Integer> array) {
+        Heap heap = new Heap(array);
+        buildMaxHeap(heap);
 
-
-        List<Integer> array = new ArrayList<>(Arrays.asList(3, 2, 4, 8, 7, 6));
-
-        buildMaxHeap(array);
-
-        System.out.println(array);
-
-
+        for (int i = heap.array.size() - 1; i > 0; i--) {
+            ListUtil.switchElement(heap.array, i, 0);
+            heap.decrease();
+            maxHeapify(heap, 0);
+        }
     }
 }

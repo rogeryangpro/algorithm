@@ -11,13 +11,14 @@ public class SortTest {
             new InsertSort(),
             new SelectSort(),
             new BubbleSort(),
-            new MergeSort()
+            new MergeSort(),
+            new HeapSort()
     );
 
     public static void main(String[] args) {
 
 
-        List<Integer> array = randomArray(10000);
+        List<Integer> array = randomArray(40);
 
         sorts.forEach(e -> {
                     long s = System.currentTimeMillis();
