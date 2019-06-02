@@ -25,6 +25,7 @@ public class SortTest {
                     System.out.println(r + " in " + (System.currentTimeMillis() - s) + " ms");
                 }
         );
+
     }
 
     public static List<Integer> randomArray(int size) {
