@@ -2,18 +2,12 @@ package sort;
 
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class MergeSort implements Sort {
-    public static void main(String[] args) {
-
-        System.out.println(new MergeSort().sort(null));
-    }
+public class MergeSort implements IntegerSort {
 
     @Override
     public List<Integer> sort(List<Integer> array) {
-//        array = Arrays.asList(3,1,3,2,5,4);
         mergeSort(array, 0, array.size() - 1);
         return array;
     }
@@ -21,14 +15,6 @@ public class MergeSort implements Sort {
     private void mergeSort(List<Integer> array, int start, int end) {
 
         if (start < end) {
-//            if (start == end - 1) {
-//                if (array.get(start) > array.get(end)) {
-//                    ListUtil.switchElement(array, start, end);
-//                }
-//                return;
-//            }
-
-
             int mid = (start + end) / 2;
             mergeSort(array, start, mid);
             mergeSort(array, mid + 1, end);

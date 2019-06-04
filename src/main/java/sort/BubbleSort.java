@@ -4,7 +4,7 @@ import sort.util.ListUtil;
 
 import java.util.List;
 
-public class BubbleSort implements Sort {
+public class BubbleSort implements IntegerSort {
 
     @Override
     public List<Integer> sort(List<Integer> array) {

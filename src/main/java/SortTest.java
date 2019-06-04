@@ -7,13 +7,14 @@ import java.util.Random;
 
 public class SortTest {
 
-    static List<Sort> sorts = Arrays.asList(
+    static List<IntegerSort> sorts = Arrays.asList(
             new InsertSort(),
             new SelectSort(),
             new BubbleSort(),
             new MergeSort(),
             new HeapSort(),
-            new QuickSort()
+            new QuickSort(),
+            new CountSort()
     );
 
     public static void main(String[] args) {

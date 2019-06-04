@@ -4,7 +4,7 @@ import sort.util.ListUtil;
 
 import java.util.List;
 
-public class QuickSort implements Sort{
+public class QuickSort implements IntegerSort {
     @Override
     public List<Integer> sort(List<Integer> array) {
 

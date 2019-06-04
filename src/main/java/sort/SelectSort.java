@@ -5,7 +5,7 @@ import sort.util.ListUtil;
 import java.util.Arrays;
 import java.util.List;
 
-public class SelectSort implements Sort {
+public class SelectSort implements IntegerSort {
     @Override
     public List<Integer> sort(List<Integer> array) {
 
@@ -28,9 +28,4 @@ public class SelectSort implements Sort {
         return array;
     }
 
-    public static void main(String[] args) {
-
-
-        System.out.println(new SelectSort().sort(Arrays.asList(1,3,23, 123,222,23,2,2,2,2,2,2,2,2,3,4,6,7,2,3,6,78899,234,234,786,4,3236,734,43453,4)));
-    }
 }

@@ -5,7 +5,7 @@ import sort.util.ListUtil;
 import java.util.Arrays;
 import java.util.List;
 
-public class InsertSort implements Sort{
+public class InsertSort implements IntegerSort {
     @Override
     public List<Integer> sort(List<Integer> array) {
 
@@ -28,7 +28,4 @@ public class InsertSort implements Sort{
         return array;
     }
 
-    public static void main(String[] args) {
-        System.out.println(new InsertSort().sort(Arrays.asList(1, 3, 2, 6, 5, 4, 4,4, 123,2,123123,4)));
-    }
 }
