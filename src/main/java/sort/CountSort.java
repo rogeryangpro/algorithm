@@ -32,7 +32,7 @@ public class CountSort implements IntegerSort {
             count.set(array.get(i), count.get(array.get(i)) - 1);
         }
 
-        return array;
+        return result;
 
     }
 

@@ -14,7 +14,8 @@ public class SortTest {
             new MergeSort(),
             new HeapSort(),
             new QuickSort(),
-            new CountSort()
+            new CountSort(),
+            new RadixSort()
     );
 
     public static void main(String[] args) {
@@ -24,7 +25,7 @@ public class SortTest {
 
         sorts.forEach(e -> {
                     long s = System.currentTimeMillis();
-                    List<Integer> r = e.sort(array);
+                    List<Integer> r = e.sort(new ArrayList<>(array));
                     System.out.println(r + " in " + (System.currentTimeMillis() - s) + " ms");
                 }
         );
