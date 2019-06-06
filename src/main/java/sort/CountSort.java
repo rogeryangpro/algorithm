@@ -1,5 +1,7 @@
 package sort;
 
+import sort.util.ListUtil;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +12,7 @@ public class CountSort implements IntegerSort {
 
         List<Integer> result = new ArrayList<>();
 
-        int max = max(array);
+        int max = ListUtil.max(array);
 
         for (int i = 0; i <= max; i++) {
             count.add(0);
@@ -36,15 +38,7 @@ public class CountSort implements IntegerSort {
 
     }
 
-    private int max(List<Integer> array) {
-        int max = -1;
-        for (int i = 0; i < array.size(); i++) {
-            if (array.get(i) > max) {
-                max = array.get(i);
-            }
-        }
-        return max;
-    }
+
 
 
 
